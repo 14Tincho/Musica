@@ -1,0 +1,71 @@
+/* ----------------- Navegador ------------------ */
+.navegador{
+  background-color: black;
+  margin-bottom: 40px;
+}
+.linkNav{
+  color: #5bc0de;
+}
+.linkNav:hover{
+  cursor: pointer;
+}
+.menus{
+  background-color: transparent;
+  margin: 0;
+  border: none;
+}
+.boton{
+  background-color: black;
+  color: #5bc0de;
+}
+.boton:hover{
+  background-color: #5bc0de;
+  color: black;
+}
+::-webkit-input-placeholder { color: #5bc0dec0; }
+:-moz-placeholder {color: #5bc0dec0; }
+::-moz-placeholder { color: #5bc0dec0; }
+:-ms-input-placeholder { color: #5bc0dec0; }
+
+
+/* -------------------- Search ------------------ */
+.buscador{
+  border: #5bc0de solid 2px;
+  background-color: black;
+  color: #5bc0de;
+}
+.input-group{
+  width: auto;
+}
+.divLinkBuscador{
+  background-color: transparent;
+}
+.divLinkBuscador:focus{
+  background-color: transparent;
+}
+.linkBuscador{
+  background-color: black;
+  color: #5bc0de;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 1px;
+}
+.linkBuscador:hover{
+  background-color: #5bc0de;
+  color: black;
+}
+.linkBuscador:focus{
+  background-color: #5bc0de;
+  color: black;
+}
+
+
+
+/* -------------------- Parte del medio ------------------ */
+.titulo{
+  margin: 100px 0 40px 0;
+}
+.imagenMain{
+  border: 2px solid black;
+  padding: 0;
+}

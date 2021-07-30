@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navegador fixed-top">
+  <a class="navbar-brand linkNav tituloMusica" href="#" (click)="filterBy='all'">Musica <img class="img" width="30" height="30" src="assets/imagen/favicon.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link linkNav" (click)="filterBy='all'" href="#">Todas las canciones</a>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle linkNav" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Artista
+        </a>
+          <div class="dropdown-menu menus" aria-labelledby="navbarDropdown">
+              <div *ngFor="let poo of posts">
+                  <button class="btn btn-block boton" (click)="filterBy=poo.artista">{{poo.mostrar}}</button>
+              </div>
+          </div>
+      </li>
+    </ul>
+
+    <div class="input-group">
+      <form class="form-inline my-2 my-lg-0">
+        <input type="text" class="form-control buscador dropdown-toggle" name="filterSearch" placeholder="Search..." data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" autocomplete="off" [(ngModel)]="filterPost">
+        <div class="dropdown-menu menus">
+            <div class="divLinkBuscador" *ngFor="let poo of posts | filter:filterPost">
+                <a href="#" class="dropdown-item linkBuscador" (click)="filterBy=poo.artista">{{poo.mostrar}}</a>
+                <!-- <button class="dropdown-item linkBuscador" (click)="filterBy=poo.artista">{{poo.mostrar}}</button> -->
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- <div class="input-group">
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div role="separator" class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="main row">
+      <h1 class="titulo col-12 text-center">Escuchar canciones</h1>
+        <div class="col-12" *ngFor="let img of (allImagen | Filterimagenes:filterBy)">
+        <h2 class="col-12"><b>{{img.titulo}}</b></h2>
+          <img class="imagen col-12 col-md-4 imagenMain" src="{{img.foto}}" width="200" height="180">
+          <audio controls="controls" class="audio col-12 col-md-8">
+              <source src="{{img.sonido}}" type="audio/mpeg">
+          </audio>
+          <hr>
+      </div>
+  </div>
+</div>
